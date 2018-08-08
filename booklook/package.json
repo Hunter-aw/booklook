@@ -1,0 +1,25 @@
+{
+  "name": "booklook",
+  "version": "1.0.0",
+  "description": "This program searches the web for books",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hunter-aw/booklook.git"
+  },
+  "author": "Hunter",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.0.11",
+    "jquery": "3.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Hunter-aw/booklook/issues"
+  },
+  "homepage": "https://github.com/Hunter-aw/booklook#readme"
+}
