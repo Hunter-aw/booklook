@@ -26,10 +26,14 @@
     </div>
 <script src="node_modules/handlebars/dist/handlebars.js"></script>
 <script id="book-template" type="text/x-handlebars-template">
-    <h1 class = "bookTitle">{{title}}</h1>
-    <p class = "description">{{description}}</p>
-    <h3 class = "author">{{author}}</h3>
-    <img src={{image}}>
+    {{#each books}}
+    <div class="book-container border-bottom">
+        <h1 class = "bookTitle">{{title}}</h1>
+        <p class = "description">{{description}}</p>
+        <h3 class = "author">Written by: {{author}}</h3>
+        <img src={{image}}>
+    </div>
+    {{/each}}
 </script> 
 
 <script src="script.js"></script>

@@ -1,7 +1,13 @@
+let booksObj = {
+    books: []
+}
+let books = booksObj.books
+
 var fetch = function () {
+    let isbn = $('#isbnInput').val()
     $.ajax({
       method: "GET",
-      url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:0439023521',
+      url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:'+isbn,
       success: handleThis,
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(textStatus);
@@ -9,7 +15,7 @@ var fetch = function () {
     }); 
   };
 
- function createBook(jsonData) {
+function createBook(jsonData) {
     var data = jsonData.items[0].volumeInfo;
     return {
     title: data.title,
@@ -19,12 +25,17 @@ var fetch = function () {
     };
 }
 
+function appendBooks(jsonData) {
+    let bookData = createBook(jsonData)
+    books.push(bookData)
+}
 var handleThis = function (jsonData) {
-    let bookData = createBook(jsonData);
+    $('.bookInfo').empty()
+    appendBooks(jsonData);
     var source = $('#book-template').html();
     var template = Handlebars.compile(source);
-    var newHTML = template(bookData);
+    var newHTML = template(booksObj);
     $('.bookInfo').append(newHTML);
 }
 
-$('.search').click(fetch)
+$('.search').click(fetch);
