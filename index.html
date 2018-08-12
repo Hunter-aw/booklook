@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BookLook 2000</title>
+    <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="title border-bottom">BookLook <i class="fa fa-eye"></i></h1>
+                <div class="bookInfo"></div>
+                <h2>Search by ISBN</h2>
+                <form>
+                    <input type="text" name="isbn" id="isbnInput" placeholder="ISBN Number">
+                    <button type="button" class= "btn btn-primary search">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="node_modules/handlebars/dist/handlebars.js"></script>
+<script id="book-template" type="text/x-handlebars-template">
+    <h1 class = "bookTitle">{{title}}</h1>
+    <p class = "description">{{description}}</p>
+    <h3 class = "author">{{author}}</h3>
+    <img src={{image}}>
+</script> 
+
+<script src="script.js"></script>
+    
+</body>
+</html>
